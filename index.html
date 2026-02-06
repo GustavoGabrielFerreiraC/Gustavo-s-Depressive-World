@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gustavo's Depressive World</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- A camada da lanterna -->
+    <div class="flashlight" id="flashlight"></div>
+
+    <div class="container fade-in">
+        <header>
+            <h1>Gustavo's<br>Depressive<br>World</h1>
+            <p>Bem-vindo aos ecos da minha mente. Tenho 19 anos e esta é a minha história.</p>
+        </header>
+
+        <section id="about">
+            <h2>O Peso Invisível</h2>
+            <p>
+                A depressão não é apenas estar triste. É como viver com um filtro cinza sobre os olhos. 
+                Desde os 14 anos, luto contra essa gravidade que tenta me puxar para baixo. 
+                Este site é minha tentativa de explicar o inexplicável, transformando sentimentos em código.
+            </p>
+        </section>
+
+        <section id="journey">
+            <h2>Minha Jornada</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="age">Pré-escola</span>
+                    <p>A primeira cicatriz. Caí de um balanço e sofri racismo de uma professora que me chamou de "macaco". Contei aos meus pais, magoado. Isso desencadeou distúrbios, atraso mental, ansiedade e hiperatividade.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="age">Infância</span>
+                    <p>Criei tics nervosos, como bater palmas e assobiar. Não conseguia ficar parado; meu único refúgio era ficar de ponta-cabeça.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="age">Adolescência</span>
+                    <p>O racismo persistiu. Um vizinho me ofendia constantemente. Saindo da casa da minha tia, fui ameaçado de morte e chamado de "macaco" novamente. Vi a violência de perto, pessoas morrendo na minha frente.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="age">14 Anos (O Sufocamento)</span>
+                    <p>Comecei a passar mal de tanta ansiedade. Ficava sem ar, sem conseguir pedir ajuda. A depressão me chamava quando tudo estava quieto. Peguei uma faca e tentei acabar com tudo, mas não consegui.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="age">2025 (O Sorriso Falso)</span>
+                    <p>Tentei novamente com antidepressivos. Me despedi de todos, até da minha sobrinha. Pedi a Deus para me levar, pois não aguentava mais ouvir de mim mesmo que deveria morrer. Tomei uma cartela e meia, vi tudo rodar, mas quando meus pais chegaram, sorri e fingi que nada tinha acontecido.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="age">O Colapso</span>
+                    <p>No dia seguinte, fui trabalhar passando mal e tomei ainda mais remédios. Quando cheguei em casa, apaguei perto da cama e só acordei às 3 da manhã do outro dia.</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="age">19 Anos (Hoje)</span>
+                    <p>Ainda aqui, lutando. A programação é minha âncora. Cada linha de código é uma prova de que ainda consigo criar, transformando meu mundo depressivo em arte.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>Criado por Gustavo Gabriel.</p>
+            <p>Se você se sente perdido, procure ajuda. No Brasil, ligue para o <a href="tel:188" class="help-link">CVV 188</a>.</p>
+        </footer>
+    </div>
+
+    <script>
+        const flashlight = document.getElementById('flashlight');
+        
+        document.addEventListener('mousemove', (e) => {
+            // Atualiza as variáveis CSS com a posição do mouse
+            document.documentElement.style.setProperty('--cursor-x', e.clientX + 'px');
+            document.documentElement.style.setProperty('--cursor-y', e.clientY + 'px');
+        });
+
+        // Reage ao toque inicial (tap) para a luz ir direto onde você toca
+        document.addEventListener('touchstart', (e) => {
+            const touch = e.touches[0];
+            document.documentElement.style.setProperty('--cursor-x', touch.clientX + 'px');
+            document.documentElement.style.setProperty('--cursor-y', touch.clientY + 'px');
+        });
+
+        // Para dispositivos móveis (toque)
+        document.addEventListener('touchmove', (e) => {
+            const touch = e.touches[0];
+            document.documentElement.style.setProperty('--cursor-x', touch.clientX + 'px');
+            document.documentElement.style.setProperty('--cursor-y', touch.clientY + 'px');
+        });
+    </script>
+</body>
+</html>
