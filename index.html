@@ -8,6 +8,16 @@
 </head>
 <body>
 
+    <!-- Áudio de chuva (precisa do arquivo rain.mp3 na pasta) -->
+    <audio id="rain-audio" loop>
+        <source src="rain.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Tela inicial para permitir o áudio -->
+    <div id="start-screen" class="start-screen">
+        <p>Aviso! esse e a pior versão de mim</p>
+    </div>
+
     <!-- A camada da lanterna -->
     <div class="flashlight" id="flashlight"></div>
 
@@ -66,28 +76,7 @@
         </footer>
     </div>
 
-    <script>
-        const flashlight = document.getElementById('flashlight');
-        
-        document.addEventListener('mousemove', (e) => {
-            // Atualiza as variáveis CSS com a posição do mouse
-            document.documentElement.style.setProperty('--cursor-x', e.clientX + 'px');
-            document.documentElement.style.setProperty('--cursor-y', e.clientY + 'px');
-        });
-
-        // Reage ao toque inicial (tap) para a luz ir direto onde você toca
-        document.addEventListener('touchstart', (e) => {
-            const touch = e.touches[0];
-            document.documentElement.style.setProperty('--cursor-x', touch.clientX + 'px');
-            document.documentElement.style.setProperty('--cursor-y', touch.clientY + 'px');
-        });
-
-        // Para dispositivos móveis (toque)
-        document.addEventListener('touchmove', (e) => {
-            const touch = e.touches[0];
-            document.documentElement.style.setProperty('--cursor-x', touch.clientX + 'px');
-            document.documentElement.style.setProperty('--cursor-y', touch.clientY + 'px');
-        });
-    </script>
+    <!-- Conectando o arquivo JavaScript externo -->
+    <script src="script.js"></script>
 </body>
 </html>
