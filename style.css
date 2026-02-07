@@ -66,6 +66,16 @@ p {
 .timeline-item {
     margin-bottom: 40px;
     position: relative;
+    /* Preparação para animação de scroll */
+    opacity: 0;
+    transform: translateY(20px); /* Começa um pouco mais para baixo */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Classe que o JavaScript vai adicionar quando o item aparecer na tela */
+.timeline-item.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .timeline-item::before {
@@ -113,6 +123,23 @@ p {
 
 @keyframes fadeIn {
     to { opacity: 1; }
+}
+
+/* Tela inicial (para o áudio funcionar) */
+.start-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Fica acima de tudo */
+    cursor: pointer;
+    transition: opacity 1s ease;
+    color: #fff;
 }
 
 /* Ajustes para Celular (Responsividade) */
